@@ -281,7 +281,7 @@ type OrgInviteAccepted struct {
 	// UserEmail is the email address of the user accepting the invite
 	UserEmail string `json:"user_email"`
 
-	// NetworkIDs
+	// NetworkIDs transferred to the org in the acceptance process
 	NetworkIDs []string `json:"network_ids"`
 }
 
