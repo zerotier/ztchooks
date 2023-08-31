@@ -302,9 +302,12 @@ type OrgInviteRejected struct {
 type OrgMemberRemoved struct {
 	HookBase
 
-	// UserID is the user ID removed from the organization
+	// UserID is the user performing the remove operation
 	UserID string `json:"user_id"`
 
-	// UserEmail is the email address of the user removed from the organization
-	UserEmail string `json:"user_email"`
+	// RemovedUserID is the ID of the user removed from the org
+	RemovedUserID string `json:"removed_user_id"`
+
+	// RemovedUserEmail is the email address of the user removed from the organization
+	RemovedUserEmail string `json:"removed_user_email"`
 }
