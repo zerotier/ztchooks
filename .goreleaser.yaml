@@ -1,9 +1,8 @@
-# This is an example .goreleaser.yml file with some sensible defaults.
-# Make sure to check the documentation at https://goreleaser.com
 gomod:
   proxy: true
 
 builds:
+  # library only, so skip building
   - skip: true
 
 release:
@@ -12,12 +11,6 @@ release:
     name: ztchooks
 
   draft: false
-
-  replace_existing_draft: true
-
-  target_commitish: "{{ .Commit }}"
-
-  # tag: "{{ .CurrentTag }}"
 
   prerelease: auto
 
@@ -28,7 +21,5 @@ release:
   name_template: "{{.ProjectName}}-v{{.Version}} {{.Env.USER}}"
 
   skip_upload: true
-# The lines beneath this are called `modelines`. See `:help modeline`
-# Feel free to remove those if you don't want/use them.
 # yaml-language-server: $schema=https://goreleaser.com/static/schema.json
 # vim: set ts=2 sw=2 tw=0 fo=cnqoj
