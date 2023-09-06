@@ -11,7 +11,7 @@ release:
     owner: zerotier
     name: ztchooks
 
-  draft: true
+  draft: false
 
   replace_existing_draft: true
 
@@ -24,6 +24,8 @@ release:
   make_latest: true
 
   mode: append
+
+  name_template: "{{.ProjectName}}-v{{.Version}} {{.Env.USER}}"
 
   skip_upload: true
 # The lines beneath this are called `modelines`. See `:help modeline`
