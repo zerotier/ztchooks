@@ -3,6 +3,9 @@
 gomod:
   proxy: true
 
+builds:
+  - skip: true
+
 release:
   github:
     owner: zerotier
