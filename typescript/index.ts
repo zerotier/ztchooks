@@ -58,7 +58,7 @@ function decode(pairs: string[], toleranceSeconds: number): signedHeader {
 
         if (item == "t") {
             var timestamp = parseInt(value, 10);
-            if (timestamp == undefined) {
+            if (timestamp == undefined || isNaN(timestamp)) {
                 throw "Invalid Header";
             }
             sh.timestamp = timestamp;
