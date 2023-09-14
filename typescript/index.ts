@@ -1,6 +1,5 @@
 
 import * as crypto from "crypto-js";
-import * as hex from "crypto-js/format-hex";
 
 export function verifySignature(
     preSharedKey: string,
