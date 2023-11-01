@@ -111,6 +111,9 @@ type NetworkMemberAuth struct {
 
 	// UserEmail is the email address of the user performing the authorization
 	UserEmail string `json:"user_email"`
+
+	// MemberMetadata is any metadata attached to the member object
+	MemberMetadata map[string]interface{} `json:"metadata"`
 }
 
 // NetworkMemberDeauth is fired for `NETWORK_DEAUTH` events
@@ -128,6 +131,9 @@ type NetworkMemberDeauth struct {
 
 	// UserEmail is the email address of the user performing the deauthorization
 	UserEmail string `json:"user_email"`
+
+	// MemberMetadata is any metadata attached to the member object
+	MemberMetadata map[string]interface{} `json:"metadata"`
 }
 
 // NetworkSSOLogin is fired whenever a user logs into a network via a configured
@@ -143,6 +149,9 @@ type NetworkSSOLogin struct {
 
 	// SSOUserEmail is the email address of the user logging into the network
 	SSOUserEmail string `json:"sso_user_email"`
+
+	// NetworkMetadata is any metadata attached to the network object
+	NetworkMetadata map[string]interface{} `json:"metadata"`
 }
 
 // NetworkSSOLoginError is fired when there is a failure during the SSO login process
@@ -160,6 +169,9 @@ type NetworkSSOLoginError struct {
 
 	// Error is a description of the error
 	Error string `json:"error"`
+
+	// NetworkMetadata is any metadata attached to the network object
+	NetworkMetadata map[string]interface{} `json:"metadata"`
 }
 
 // NetworkCreated is fired whenever an organization member creates a new network
@@ -177,6 +189,9 @@ type NetworkCreated struct {
 
 	// UserEmail is the email address of the user creating the network
 	UserEmail string `json:"user_email"`
+
+	// NetworkMetadata is any metadata attached to the network object
+	NetworkMetadata map[string]interface{} `json:"metadata"`
 }
 
 // NetworkConfigChanged is fired whenever the configuration of a ZeroTier network changes
@@ -197,6 +212,9 @@ type NetworkConfigChanged struct {
 
 	// NewConfig is the new configuration for the network.
 	NewConfig map[string]any `json:"new_config"`
+
+	// NetworkMetadata is any metadata attached to the network object
+	NetworkMetadata map[string]interface{} `json:"metadata"`
 }
 
 // NetworkDeleted is fired whenever a network configuration is changed
@@ -214,6 +232,9 @@ type NetworkDeleted struct {
 
 	// UserEmail is the email address of the user that deleted the network
 	UserEmail string `json:"user_email"`
+
+	// NetworkMetadata is any metadata attached to the network object
+	NetworkMetadata map[string]interface{} `json:"metadata"`
 }
 
 // MemberConfigChanged is fired when a network member's configuration changes
@@ -237,6 +258,9 @@ type MemberConfigChanged struct {
 
 	// UserEmail is the email address of the user that modified the network member
 	UserEmail string `json:"user_email"`
+
+	// MemberMetadata is any metadata attached to the member object
+	MemberMetadata map[string]interface{} `json:"metadata"`
 }
 
 type MemberDeleted struct {
@@ -256,6 +280,9 @@ type MemberDeleted struct {
 
 	// UserEmail is the email address of the user that deleted the network member
 	UserEmail string `json:"user_email"`
+
+	// MemberMetadata is any metadata attached to the member object
+	MemberMetadata map[string]interface{} `json:"metadata"`
 }
 
 // OrgInviteSent is fired whenever a new member is invited to join your ZeroTer organization
